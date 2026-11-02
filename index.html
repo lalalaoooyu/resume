@@ -56,6 +56,8 @@ main{background:repeating-linear-gradient(90deg,var(--grass) 0 32px,#58aa35 32px
 section{max-width:960px;margin:0 auto 56px;scroll-margin-top:70px}
 .board{background:var(--paper);border:6px solid var(--wood-dark);outline:6px solid var(--wood);box-shadow:0 0 0 12px var(--wood-dark),12px 18px 0 12px rgba(0,0,0,.25);padding:28px;margin:12px}
 .title-sign{display:block;width:fit-content;margin:0 auto 28px;background:var(--wood);border:4px solid var(--wood-dark);box-shadow:inset 0 -6px 0 var(--wood-dark),inset 0 4px 0 var(--wood-light),6px 6px 0 rgba(0,0,0,.25);padding:12px 20px 16px;font-size:clamp(13px,3vw,20px);color:#fff;text-shadow:2px 2px 0 var(--wood-dark)}
+.px{display:inline-block;width:32px;height:32px;vertical-align:middle;margin-right:10px;image-rendering:pixelated}
+.px svg{width:100%;height:100%;display:block}
 h3{font-size:13px;line-height:1.6;color:var(--accent);margin-bottom:6px}
 .meta{color:#8a5a2b;margin-bottom:10px}
 ul{list-style:none}
@@ -116,7 +118,7 @@ footer a{color:var(--gold)}
       <p class="meta" style="font-size:24px"><b>IBM Japan</b> · Software Engineer · Apr 2025 – Present</p>
 
       <div class="quest">
-        <h3>AI Agent Development</h3>
+        <h3><i class="px" data-i="robot"></i>AI Agent Development</h3>
         <p class="meta">Aug 2025 – Present</p>
         <ul>
           <li>Developing an AI agent in Microsoft Copilot Studio that ingests client materials and generates structured draft frameworks, as developer &amp; prompt engineer in a 3-person team.</li>
@@ -127,7 +129,7 @@ footer a{color:var(--gold)}
       </div>
 
       <div class="quest">
-        <h3>AI Governance Platform: API Gateway</h3>
+        <h3><i class="px" data-i="shield"></i>AI Governance Platform: API Gateway</h3>
         <p class="meta">Apr 2025 – Aug 2025</p>
         <ul>
           <li>Sole developer in a 4-person team, owning the gateway from requirements and design through implementation and testing.</li>
@@ -139,7 +141,7 @@ footer a{color:var(--gold)}
       </div>
 
       <div class="quest">
-        <h3>Internal Productivity Tools</h3>
+        <h3><i class="px" data-i="gear"></i>Internal Productivity Tools</h3>
         <p class="meta">Jan 2026 – Apr 2026</p>
         <ul>
           <li>AI-powered attendance &amp; timesheet automation, saving ~30 hours/month across the organization.</li>
@@ -148,7 +150,7 @@ footer a{color:var(--gold)}
       </div>
 
       <div class="quest">
-        <h3>CI/CD Pipeline Operations</h3>
+        <h3><i class="px" data-i="pipe"></i>CI/CD Pipeline Operations</h3>
         <p class="meta">Apr 2025 – Dec 2025</p>
         <ul>
           <li>Maintained Tekton CI/CD pipelines for a bank's housing loan system — three containerized services on Red Hat OpenShift (ROSA).</li>
@@ -163,7 +165,7 @@ footer a{color:var(--gold)}
     <div class="board grid">
       <div class="item">
         
-        <h3 style="margin-top:8px">AI Learning Platform</h3>
+        <h3 style="margin-top:8px"><i class="px" data-i="game"></i>AI Learning Platform</h3>
         <p>A gamified website for learning AI concepts through level-based challenges.</p>
       </div>
     </div>
@@ -172,13 +174,13 @@ footer a{color:var(--gold)}
   <section id="skills">
     <span class="title-sign">SKILLS</span>
     <div class="board grid">
-      <div class="item"><h3 style="margin-top:8px">AI &amp; LLM</h3>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="brain"></i>AI &amp; LLM</h3>
         <div class="chips"><span class="chip">Generative AI</span><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Prompt Eng.</span><span class="chip">AI Agents</span><span class="chip">Copilot Studio</span><span class="chip">Azure OpenAI</span></div></div>
-      <div class="item"><h3 style="margin-top:8px">Cloud &amp; DevOps</h3>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="cloud"></i>Cloud &amp; DevOps</h3>
         <div class="chips"><span class="chip">Azure</span><span class="chip">API Management</span><span class="chip">AWS</span><span class="chip">OpenShift</span><span class="chip">Tekton</span><span class="chip">CI/CD</span></div></div>
-      <div class="item"><h3 style="margin-top:8px">Programming</h3>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="code"></i>Programming</h3>
         <div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">REST API Design</span></div></div>
-      <div class="item"><h3 style="margin-top:8px">Languages</h3>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="chat"></i>Languages</h3>
         <div class="stat"><span>Chinese</span><div class="bar"><i style="width:100%"></i></div></div>
         <div class="stat"><span>Japanese N1</span><div class="bar"><i style="width:90%"></i></div></div>
         <div class="stat"><span>English</span><div class="bar"><i style="width:80%"></i></div></div></div>
@@ -188,11 +190,11 @@ footer a{color:var(--gold)}
   <section id="edu">
     <span class="title-sign">EDUCATION &amp; BADGES</span>
     <div class="board grid">
-      <div class="item"><h3 style="margin-top:8px">Meiji University</h3>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="cap"></i>Meiji University</h3>
         <p>Bachelor of Laws, School of Law (Law and Information Course)</p><p class="meta">Tokyo · Mar 2025</p></div>
-      <div class="item"><h3 style="margin-top:8px">AWS Certified</h3><p>AI Practitioner</p><p class="meta">Nov 2026 · NEW!</p></div>
-      <div class="item"><h3 style="margin-top:8px">AWS Certified</h3><p>Cloud Practitioner</p></div>
-      <div class="item"><h3 style="margin-top:8px">Oracle Java</h3><p>Certified Java Programmer, Silver SE 11</p></div>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="star"></i>AWS Certified</h3><p>AI Practitioner</p><p class="meta">Nov 2026 · NEW!</p></div>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="medal"></i>AWS Certified</h3><p>Cloud Practitioner</p></div>
+      <div class="item"><h3 style="margin-top:8px"><i class="px" data-i="cup"></i>Oracle Java</h3><p>Certified Java Programmer, Silver SE 11</p></div>
     </div>
   </section>
 
@@ -207,5 +209,29 @@ footer a{color:var(--gold)}
 </main>
 
 <footer>© 2026 Alice (Jiatian) Yu · Made with pixels</footer>
+<script>
+// 8x8 pixel icons: each char maps to a palette color, '.' is transparent
+const PAL={k:'#4a2a0c',w:'#ffffff',g:'#5fb33a',d:'#3d7a23',o:'#e85d3a',y:'#ffd23f',b:'#6ec6ff',n:'#c98a4b',s:'#9aa4ad',p:'#e889b5'};
+const ICONS={
+robot:['...yy...','..kkkk..','.kssssk.','.kbsbsk.','.kssssk.','..kook..','.kssssk.','.k.kk.k.'],
+shield:['.kkkkkk.','kbbwbbbk','kbwwwbbk','kbbwbbbk','kbbbbbbk','.kbbbbk.','..kbbk..','...kk...'],
+gear:['..k..k..','.kskksk.','kssssssk','.ssk.ss.','.ss.kss.','kssssssk','.kskksk.','..k..k..'],
+pipe:['kkkkkkkk','kggggggk','kkkkkkkk','..kddk..','..kddk..','kkkkkkkk','kggggggk','kkkkkkkk'],
+game:['........','.kkkkkk.','kwwwwwwk','kwkwwowk','kkkwowwk','kwkwwwwk','.kkkkkk.','........'],
+brain:['..pppp..','.ppkppp.','ppkpppkp','pppkppkp','pkpppkpp','.ppkppp.','..pppp..','...kk...'],
+cloud:['........','...ww...','..wwww..','.wwwwwww','wwwwwwww','bwwwwwwb','.bbbbbb.','........'],
+code:['........','..k..k..','.k....k.','k..g...k','k...g..k','.k....k.','..k..k..','........'],
+chat:['kkkkkkk.','kwwwwwk.','kwkwkwk.','kwwwwwk.','kkwkkkk.','.kk.....','.k......','........'],
+cap:['........','...kk...','.kkkkkk.','kkkkkkkk','.kkkkkyk','..kkk.y.','..kkk.y.','.......y'],
+star:['...yy...','...yy...','yyyyyyyy','.yyyyyy.','..yyyy..','.yy..yy.','.y....y.','........'],
+medal:['.o....o.','..o..o..','...oo...','..yyyy..','.yyyyyy.','.yykyyy.','..yyyy..','........'],
+cup:['........','.wwwwww.','.nnnnnnkk','.nnnnnn.k','.nnnnnnkk','.nnnnnn.','..nnnn..','kkkkkkkk']};
+document.querySelectorAll('.px').forEach(el=>{
+  const m=ICONS[el.dataset.i]; if(!m) return;
+  let r='';
+  m.forEach((row,y)=>[...row].slice(0,8).forEach((c,x)=>{ if(PAL[c]) r+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${PAL[c]}"/>`; }));
+  el.innerHTML=`<svg viewBox="0 0 8 8" shape-rendering="crispEdges">${r}</svg>`;
+});
+</script>
 </body>
 </html>
