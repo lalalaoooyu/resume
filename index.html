@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alice Yu</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sky1:#6ec6ff; --sky2:#bfe9ff; --grass:#5fb33a; --grass-dark:#3d7a23;
+  --dirt:#8b5a2b; --wood:#c98a4b; --wood-dark:#7a4a1e; --wood-light:#e8b77a;
+  --paper:#fbe7b5; --ink:#4a2a0c; --accent:#e85d3a; --gold:#ffd23f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--sky1);color:var(--ink);font-family:'VT323',monospace;font-size:22px;line-height:1.25;overflow-x:hidden;image-rendering:pixelated}
+h1,h2,h3,.btn,nav a{font-family:'Press Start 2P',monospace}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;background:linear-gradient(var(--sky1),var(--sky2) 70%);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 16px 220px;text-align:center}
+.sun{position:absolute;top:60px;right:10%;width:90px;height:90px;background:var(--gold);box-shadow:0 0 0 8px #ffe680,0 0 0 16px #fff2b3}
+.cloud{position:absolute;background:#fff;height:28px;width:120px;box-shadow:24px -20px 0 #fff,56px -20px 0 #fff,32px -36px 0 #fff, 0 6px 0 #dbeefa;animation:drift linear infinite}
+.cloud:nth-of-type(2){top:18%;left:-160px;animation-duration:55s}
+.cloud:nth-of-type(3){top:32%;left:-160px;animation-duration:80s;animation-delay:-30s;transform:scale(.7)}
+.cloud:nth-of-type(4){top:10%;left:-160px;animation-duration:70s;animation-delay:-50s}
+@keyframes drift{to{left:110%}}
+.hills{position:absolute;bottom:120px;left:0;right:0;height:160px;background:
+  radial-gradient(circle at 15% 100%,#7cc95a 0 140px,transparent 141px),
+  radial-gradient(circle at 55% 100%,#6bbd4a 0 180px,transparent 181px),
+  radial-gradient(circle at 90% 100%,#7cc95a 0 150px,transparent 151px)}
+.ground{position:absolute;bottom:0;left:0;right:0;height:130px;background:
+  repeating-linear-gradient(90deg,var(--grass) 0 16px,#68bf42 16px 32px) top/100% 24px no-repeat,
+  repeating-linear-gradient(90deg,var(--dirt) 0 32px,#7d4f24 32px 64px)}
+.fence{position:absolute;bottom:118px;left:0;right:0;height:46px;background:
+  linear-gradient(var(--wood) 0 0) 0 12px/100% 8px no-repeat,
+  linear-gradient(var(--wood) 0 0) 0 28px/100% 8px no-repeat,
+  repeating-linear-gradient(90deg,var(--wood-dark) 0 10px,transparent 10px 70px)}
+.logo{position:relative;z-index:2}
+.logo h1{font-size:clamp(28px,7vw,68px);color:#fff;letter-spacing:2px;
+  text-shadow:4px 4px 0 var(--wood-dark),-3px -3px 0 var(--wood-dark),3px -3px 0 var(--wood-dark),-3px 3px 0 var(--wood-dark),8px 8px 0 rgba(0,0,0,.2)}
+.logo .sub{display:inline-block;margin-top:22px;background:var(--wood);border:4px solid var(--wood-dark);box-shadow:inset 0 -6px 0 var(--wood-dark),inset 0 4px 0 var(--wood-light);padding:10px 18px 14px;font-family:'Press Start 2P';font-size:clamp(10px,2.4vw,15px);color:#fff;text-shadow:2px 2px 0 var(--wood-dark)}
+.tagline{margin-top:18px;font-size:26px;color:var(--ink);background:rgba(255,255,255,.6);padding:4px 12px}
+.btn{display:inline-block;margin:22px 8px 0;background:var(--accent);color:#fff;text-decoration:none;font-size:12px;padding:14px 18px 18px;border:4px solid #7a2a14;box-shadow:inset 0 -6px 0 #b13c1f,inset 0 4px 0 #ff9a7a;transition:transform .1s}
+.btn:hover{transform:translateY(-3px)}
+.btn.green{background:var(--grass);border-color:var(--grass-dark);box-shadow:inset 0 -6px 0 var(--grass-dark),inset 0 4px 0 #9be27a}
+.chicken{position:absolute;bottom:128px;width:24px;height:20px;background:#fff;box-shadow:16px -10px 0 -2px #fff,22px -10px 0 -6px var(--accent),-4px 4px 0 -4px #000;animation:walk 18s linear infinite;z-index:3}
+@keyframes walk{0%{left:-40px}100%{left:105%}}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;flex-wrap:wrap;gap:4px;padding:8px;background:var(--wood);border-bottom:4px solid var(--wood-dark);box-shadow:inset 0 -4px 0 #a86f35}
+nav a{color:#fff;text-decoration:none;font-size:10px;padding:8px 10px;text-shadow:2px 2px 0 var(--wood-dark)}
+nav a:hover{background:var(--wood-dark)}
+
+/* ---------- SECTIONS ---------- */
+main{background:repeating-linear-gradient(90deg,var(--grass) 0 32px,#58aa35 32px 64px);padding:40px 16px 80px}
+section{max-width:960px;margin:0 auto 56px;scroll-margin-top:70px}
+.board{background:var(--paper);border:6px solid var(--wood-dark);outline:6px solid var(--wood);box-shadow:0 0 0 12px var(--wood-dark),12px 18px 0 12px rgba(0,0,0,.25);padding:28px;margin:12px}
+.title-sign{display:block;width:fit-content;margin:0 auto 28px;background:var(--wood);border:4px solid var(--wood-dark);box-shadow:inset 0 -6px 0 var(--wood-dark),inset 0 4px 0 var(--wood-light),6px 6px 0 rgba(0,0,0,.25);padding:12px 20px 16px;font-size:clamp(13px,3vw,20px);color:#fff;text-shadow:2px 2px 0 var(--wood-dark)}
+h3{font-size:13px;line-height:1.6;color:var(--accent);margin-bottom:6px}
+.meta{color:#8a5a2b;margin-bottom:10px}
+ul{list-style:none}
+li{padding-left:28px;position:relative;margin-bottom:6px}
+li::before{content:"";position:absolute;left:4px;top:8px;width:12px;height:12px;background:var(--grass);box-shadow:inset -3px -3px 0 var(--grass-dark)}
+.quest{border-top:4px dashed #d9b77a;padding-top:18px;margin-top:18px}
+.quest:first-of-type{border:none;margin-top:0;padding-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.item{background:#fff3d1;border:4px solid var(--wood-dark);padding:14px;box-shadow:inset 0 -5px 0 #e8cc8f}
+.item .icon{font-size:34px;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{background:#fff;border:3px solid var(--wood-dark);padding:0 8px;font-size:20px}
+.stat{display:flex;align-items:center;gap:10px;margin:8px 0}
+.stat span{width:140px;flex:none}
+.bar{flex:1;height:18px;background:#d9b77a;border:3px solid var(--wood-dark)}
+.bar i{display:block;height:100%;background:var(--accent);box-shadow:inset 0 -4px 0 #b13c1f}
+.about{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.portrait{width:120px;height:120px;flex:none;background:#fff3d1;border:4px solid var(--wood-dark);display:grid;place-items:center;font-size:64px}
+footer{background:var(--dirt);color:var(--paper);text-align:center;padding:24px 16px;border-top:6px solid var(--grass-dark);font-size:20px}
+footer a{color:var(--gold)}
+@media (max-width:600px){.board{padding:18px;margin:12px 6px}.stat span{width:96px}nav a{font-size:8px;padding:6px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#about">About</a><a href="#quests">Experience</a><a href="#projects">Projects</a>
+  <a href="#skills">Skills</a><a href="#edu">Education</a><a href="#contact">Contact</a>
+</nav>
+
+<header class="hero">
+  <div class="sun"></div>
+  <div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
+  <div class="logo">
+    <h1>ALICE YU</h1>
+    <div class="tagline" style="margin-top:10px">a.k.a. Jiatian Yu</div>
+    <div class="sub">AI ENGINEER · TOKYO</div>
+    <p class="tagline">Growing generative AI solutions for the financial sector 🌱</p>
+    <a class="btn" href="#quests">Start Adventure</a>
+    <a class="btn green" href="#contact">Say Hello</a>
+  </div>
+  <div class="hills"></div><div class="fence"></div><div class="ground"></div>
+  <div class="chicken"></div>
+</header>
+
+<main>
+  <section id="about">
+    <span class="title-sign">ABOUT ME</span>
+    <div class="board about">
+      <div class="portrait">🧑‍🌾</div>
+      <p style="flex:1;min-width:220px">AI Engineer at <b>IBM Japan</b> building generative AI solutions for financial-sector clients. Experienced in AI agent development, prompt engineering, and API gateway design for AI governance — working directly with clients from requirements gathering through delivery. A background in law and information studies brings a strong understanding of compliance and governance to AI adoption.</p>
+    </div>
+  </section>
+
+  <section id="quests">
+    <span class="title-sign">QUEST LOG</span>
+    <div class="board">
+      <p class="meta" style="font-size:24px"><b>IBM Japan</b> · Software Engineer · Apr 2025 – Present</p>
+
+      <div class="quest">
+        <h3>🤖 AI Agent Development</h3>
+        <p class="meta">Aug 2025 – Present</p>
+        <ul>
+          <li>Developing an AI agent in Microsoft Copilot Studio that ingests client materials and generates structured draft frameworks, as developer &amp; prompt engineer in a 3-person team.</li>
+          <li>Accelerated the PoC by delivering a working MVP directly to the client, validating feasibility with real users.</li>
+          <li>Designed the agent's prompts and workflows, and advised the client on technical feasibility.</li>
+          <li>Cut first-pass document review time from ~2 weeks to ~1 week.</li>
+        </ul>
+      </div>
+
+      <div class="quest">
+        <h3>🛡️ AI Governance Platform: API Gateway</h3>
+        <p class="meta">Apr 2025 – Aug 2025</p>
+        <ul>
+          <li>Sole developer in a 4-person team, owning the gateway from requirements and design through implementation and testing.</li>
+          <li>Built on Azure API Management with XML policies for auth, rate limiting, request/response transformation, and logging.</li>
+          <li>Gathered requirements directly from the client and presented at each milestone.</li>
+          <li>Enabled a major Japanese financial institution to adopt AI services under centralized security and compliance controls.</li>
+          <li><b>🎉 Platform officially launched (Oct 2026)</b> — now provides real-time monitoring and guardrails for prompts and AI responses across the institution.</li>
+        </ul>
+      </div>
+
+      <div class="quest">
+        <h3>⚙️ Internal Productivity Tools</h3>
+        <p class="meta">Jan 2026 – Apr 2026</p>
+        <ul>
+          <li>AI-powered attendance &amp; timesheet automation, saving ~30 hours/month across the organization.</li>
+          <li>Onboarding system centralizing documents and training, cutting ramp-up time by ~50%.</li>
+        </ul>
+      </div>
+
+      <div class="quest">
+        <h3>🚜 CI/CD Pipeline Operations</h3>
+        <p class="meta">Apr 2025 – Dec 2025</p>
+        <ul>
+          <li>Maintained Tekton CI/CD pipelines for a bank's housing loan system — three containerized services on Red Hat OpenShift (ROSA).</li>
+          <li>Handled toolchain upgrades from change design and testing through production release.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <span class="title-sign">PROJECTS</span>
+    <div class="board grid">
+      <div class="item">
+        <div class="icon">🎮</div>
+        <h3 style="margin-top:8px">AI Learning Platform</h3>
+        <p>A gamified website for learning AI concepts through level-based challenges.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <span class="title-sign">SKILLS</span>
+    <div class="board grid">
+      <div class="item"><div class="icon">🧠</div><h3 style="margin-top:8px">AI &amp; LLM</h3>
+        <div class="chips"><span class="chip">Generative AI</span><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Prompt Eng.</span><span class="chip">AI Agents</span><span class="chip">Copilot Studio</span><span class="chip">Azure OpenAI</span></div></div>
+      <div class="item"><div class="icon">☁️</div><h3 style="margin-top:8px">Cloud &amp; DevOps</h3>
+        <div class="chips"><span class="chip">Azure</span><span class="chip">API Management</span><span class="chip">AWS</span><span class="chip">OpenShift</span><span class="chip">Tekton</span><span class="chip">CI/CD</span></div></div>
+      <div class="item"><div class="icon">⌨️</div><h3 style="margin-top:8px">Programming</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">REST API Design</span></div></div>
+      <div class="item"><div class="icon">💬</div><h3 style="margin-top:8px">Languages</h3>
+        <div class="stat"><span>Chinese</span><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="stat"><span>Japanese N1</span><div class="bar"><i style="width:90%"></i></div></div>
+        <div class="stat"><span>English</span><div class="bar"><i style="width:80%"></i></div></div></div>
+    </div>
+  </section>
+
+  <section id="edu">
+    <span class="title-sign">EDUCATION &amp; BADGES</span>
+    <div class="board grid">
+      <div class="item"><div class="icon">🎓</div><h3 style="margin-top:8px">Meiji University</h3>
+        <p>Bachelor of Laws, School of Law (Law and Information Course)</p><p class="meta">Tokyo · Mar 2025</p></div>
+      <div class="item"><div class="icon">✨</div><h3 style="margin-top:8px">AWS Certified</h3><p>AI Practitioner</p><p class="meta">Nov 2026 · NEW!</p></div>
+      <div class="item"><div class="icon">🏅</div><h3 style="margin-top:8px">AWS Certified</h3><p>Cloud Practitioner</p></div>
+      <div class="item"><div class="icon">☕</div><h3 style="margin-top:8px">Oracle Java</h3><p>Certified Java Programmer, Silver SE 11</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <span class="title-sign">MAILBOX</span>
+    <div class="board" style="text-align:center">
+      <div style="font-size:56px">📬</div>
+      <p style="font-size:26px;margin:10px 0">Got a quest for me? Drop a letter!</p>
+      <a class="btn" href="mailto:lalalaoooyu@gmail.com">lalalaoooyu@gmail.com</a>
+      <p class="meta" style="margin-top:16px">📍 Tokyo, Japan</p>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Alice (Jiatian) Yu · Made with 🌱 pixels</footer>
+</body>
+</html>
